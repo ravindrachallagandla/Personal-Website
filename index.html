@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ravindra Kumar Challagandla — Tech Disruptor</title>
+
+    <!-- Fonts & Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-1: #fffdfc;
+        --bg-2: #f6f9ff;
+        --text: #071125;
+        --muted: #546370;
+        --accent-a: #9fe7d6;
+        --accent-b: #d9c7ff;
+        --accent-c: #ffd6b2;
+        --glass: rgba(255, 255, 255, 0.66);
+        --card-shadow: 0 18px 40px rgba(11, 22, 55, 0.06);
+      }
+      .dark {
+        --bg-1: #080617;
+        --bg-2: #0f1530;
+        --text: #e9f6ff;
+        --muted: #9fb4cf;
+        --accent-a: #64e6d8;
+        --accent-b: #b895ff;
+        --accent-c: #ffbfa0;
+        --glass: rgba(8, 8, 12, 0.44);
+        --card-shadow: 0 22px 70px rgba(4, 6, 20, 0.6);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: Poppins, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        color: var(--text);
+        background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+        -webkit-font-smoothing: antialiased;
+        transition: background 0.35s, color 0.35s;
+      }
+
+      /* NAV */
+      .nav-pill {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 18px;
+        z-index: 1200;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: var(--glass);
+        box-shadow: var(--card-shadow);
+        backdrop-filter: blur(8px);
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .nav-pill a {
+        color: var(--text);
+        font-weight: 600;
+        text-decoration: none;
+        padding: 6px 10px;
+        border-radius: 8px;
+      }
+      .nav-pill a:hover {
+        color: #5236d6;
+      }
+      .toggle {
+        width: 44px;
+        height: 28px;
+        border-radius: 999px;
+        padding: 3px;
+        border: none;
+        cursor: pointer;
+        background: linear-gradient(90deg, var(--accent-b), var(--accent-a));
+        display: flex;
+        align-items: center;
+      }
+      .toggle .dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: white;
+        transition: transform 0.36s ease;
+      }
+      .dark .toggle {
+        background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+      }
+      .dark .toggle .dot {
+        transform: translateX(16px);
+      }
+
+      /* HERO */
+      /* HERO */
+      /* DARK MODE HERO NAME SHIMMER */
+      body.dark h1.title::after {
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.5) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+      }
+
+      header.hero {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 480px;
+        gap: 28px;
+        align-items: center;
+        padding: 6rem 4rem;
+        position: relative;
+        overflow: visible;
+        background: linear-gradient(
+          135deg,
+          #1e3c72,
+          #2a5298
+        ); /* vibrant blue gradient background */
+        color: #f0f8ff; /* text color for better contrast */
+      }
+
+      header .eyebrow {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-weight: 700;
+        background: linear-gradient(
+          90deg,
+          #fbb034,
+          #ffdd00,
+          #ffdd00,
+          #fbb034
+        ); /* sunny vibrant gradient */
+        color: #042;
+        box-shadow: var(--card-shadow);
+        font-size: 0.86rem;
+      }
+
+      /* HERO NAME SHIMMER */
+      h1.title {
+        display: inline-block;
+        font-family: Poppins;
+        font-weight: 800;
+        font-size: clamp(2rem, 3.4vw, 3.8rem);
+        margin: 16px 0;
+        background: linear-gradient(90deg, #64e6d8, #b895ff, #ffbfa0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+        overflow: hidden;
+      }
+
+      h1.title::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 75%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.3) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-25deg);
+        animation: shimmer 2.8s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -75%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      p.lead {
+        color: #e0f7fa; /* soft cyan for contrast */
+        max-width: 72ch;
+        line-height: 1.6;
+      }
+
+      .role-chip {
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: linear-gradient(
+          90deg,
+          #ff7e5f,
+          #feb47b
+        ); /* lively orange gradient */
+        font-weight: 700;
+        color: #021;
+        box-shadow: var(--card-shadow);
+      }
+
+      .roles {
+        margin-top: 16px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .cta-row {
+        margin-top: 22px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .btn-cta {
+        background: linear-gradient(
+          90deg,
+          var(--accent-a),
+          var(--accent-b),
+          var(--accent-c)
+        );
+        border: none;
+        color: #021;
+        padding: 10px 16px;
+        border-radius: 12px;
+        font-weight: 800;
+        box-shadow: 0 12px 40px rgba(124, 58, 237, 0.08);
+      }
+      .btn-ghost {
+        background: rgba(255, 255, 255, 0.7);
+        border: none;
+        padding: 9px 14px;
+        border-radius: 10px;
+        font-weight: 700;
+      }
+
+      /* PROFILE */
+      .profile-wrap {
+        position: relative;
+        width: 420px;
+        height: 420px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 20;
+      }
+      .profile-card {
+        position: absolute;
+        width: 320px;
+        height: 360px;
+        border-radius: 28% 72% 60% 40% / 48% 52% 42% 58%;
+        overflow: hidden;
+        box-shadow: var(--card-shadow);
+        transform: rotate(-6deg);
+        background: var(--glass);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 6px solid rgba(255, 255, 255, 0.6);
+      }
+      .profile-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transform: rotate(6deg);
+      }
+      .profile-wrap {
+        animation: floatWrap 6s ease-in-out infinite;
+      }
+
+      /* HERO PROFILE GLOW */
+      .profile-ring {
+        position: absolute;
+        width: 360px;
+        height: 360px;
+        border-radius: 50%;
+        background: conic-gradient(
+          from 200deg,
+          #ffbfa0,
+          #9fe7d6,
+          #d9c7ff,
+          #ffbfa0
+        );
+        background: -webkit-conic-gradient(
+          from 200deg,
+          #ffbfa0,
+          #9fe7d6,
+          #d9c7ff,
+          #ffbfa0
+        );
+        filter: blur(28px);
+        transform: rotate(-8deg);
+        opacity: 0.7;
+        animation: glowRing 6s ease-in-out infinite;
+      }
+
+      @keyframes glowRing {
+        0% {
+          transform: rotate(-8deg) scale(1);
+          opacity: 0.65;
+        }
+        50% {
+          transform: rotate(4deg) scale(1.08);
+          opacity: 0.9;
+        }
+        100% {
+          transform: rotate(-8deg) scale(1);
+          opacity: 0.65;
+        }
+      }
+
+      /* SECTIONS & POLYGONS */
+      section {
+        padding: 6rem 4rem;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+      .section-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        font-family: Poppins;
+        font-weight: 800;
+        color: var(--text);
+        margin-bottom: 18px;
+      }
+      .section-sub {
+        text-align: center;
+        color: var(--muted);
+        max-width: 72ch;
+        margin: 0 auto 28px;
+      }
+      section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background: radial-gradient(
+            circle at 22% 22%,
+            var(--accent-a),
+            transparent 35%
+          ),
+          radial-gradient(circle at 78% 78%, var(--accent-b), transparent 35%),
+          radial-gradient(circle at 45% 72%, var(--accent-c), transparent 35%);
+        opacity: 0.6; /* more visible */
+        transform: rotate(14deg);
+        animation: polyRotate 60s linear infinite;
+      }
+      @keyframes polyRotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Services */
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
+        z-index: 2;
+        position: relative;
+      }
+      .service {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.88),
+          rgba(255, 255, 255, 0.98)
+        );
+        padding: 20px;
+        border-radius: 14px;
+        box-shadow: var(--card-shadow);
+        transition: transform 0.28s;
+      }
+      .service:hover {
+        transform: translateY(-8px);
+      }
+
+      /* TECH */
+      .tech-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        position: relative;
+      }
+      .tech-item {
+        width: 120px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(180deg, #fff, #fbfdff);
+        border-radius: 12px;
+        box-shadow: var(--card-shadow);
+        padding: 6px;
+        text-align: center;
+        overflow: hidden;
+      }
+      .tech-item img {
+        max-width: 60%;
+        max-height: 50%;
+        object-fit: contain;
+        margin-bottom: 6px;
+      }
+      .tech-item span {
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      .tech-item:hover {
+        transform: scale(1.05);
+      }
+
+      /* Projects */
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 18px;
+        z-index: 2;
+        position: relative;
+      }
+      .project-card {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: var(--card-shadow);
+        transition: transform 0.3s;
+        background: var(--glass);
+        backdrop-filter: blur(12px);
+        display: flex;
+        flex-direction: column;
+      }
+      .project-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+      }
+      .project-card h5 {
+        margin: 12px;
+      }
+
+      /* ANALYTICS */
+      .analytics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 24px;
+        justify-items: center;
+        margin-top: 32px;
+        z-index: 2;
+        position: relative;
+      }
+      .analytic-item {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.85),
+          rgba(255, 255, 255, 0.95)
+        );
+        padding: 28px 16px;
+        border-radius: 16px;
+        box-shadow: var(--card-shadow);
+        transition: transform 0.28s;
+      }
+      .analytic-item:hover {
+        transform: translateY(-6px);
+      }
+      .analytic-item .number {
+        font-size: 2.6rem;
+        font-weight: 800;
+        background: linear-gradient(
+          90deg,
+          var(--accent-a),
+          var(--accent-b),
+          var(--accent-c)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .analytic-item p {
+        margin-top: 8px;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      /* CLIENT MARQUEE */
+      .client-marquee-wrapper {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        margin-top: 32px;
+        z-index: 2;
+      }
+      .client-marquee {
+        display: flex;
+        gap: 100px;
+        align-items: center;
+        animation: marquee 36s linear infinite;
+      }
+      .client-marquee img {
+        height: 64px;
+        width: auto;
+        filter: grayscale(0.2) contrast(1.1);
+        display: block;
+      }
+      .client-marquee-wrapper:hover .client-marquee {
+        animation-play-state: paused;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* ============ REVIEWS SECTION ============ */
+      .reviews-slider {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .reviews-track {
+        display: flex;
+        animation: scrollReviews 50s linear infinite;
+        width: calc(200%); /* duplicate reviews for seamless loop */
+      }
+
+      .review-card {
+        flex: 0 0 calc(25% - 20px); /* max 4 visible */
+        margin: 10px;
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        border-radius: 18px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: left;
+        min-height: 280px;
+        transition: transform 0.3s ease;
+      }
+      .review-card:hover {
+        transform: translateY(-5px) scale(1.02);
+      }
+
+      .review-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .review-header img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+
+      .reviewer-info strong {
+        display: block;
+        font-weight: 700;
+      }
+
+      .reviewer-info .role {
+        font-size: 0.85rem;
+        color: #555;
+      }
+
+      .review-card p {
+        color: #222;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        min-height: 120px;
+      }
+
+      @keyframes scrollReviews {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 1200px) {
+        .review-card {
+          flex: 0 0 calc(50% - 20px);
+        } /* 2 visible */
+      }
+      @media (max-width: 768px) {
+        .review-card {
+          flex: 0 0 calc(100% - 20px);
+        } /* 1 visible */
+      }
+
+      .reviews-slider:hover .reviews-track {
+        animation-play-state: paused;
+      }
+
+      /* CONTACT / FORM */
+      .contact-form {
+        max-width: 520px;
+        margin: 0 auto;
+        background: var(--glass);
+        padding: 28px;
+        border-radius: 16px;
+        box-shadow: var(--card-shadow);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 2;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        font-size: 0.95rem;
+      }
+      .contact-form button {
+        padding: 10px 16px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(
+          90deg,
+          var(--accent-a),
+          var(--accent-b),
+          var(--accent-c)
+        );
+        color: #021;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.18s;
+      }
+      .contact-form button:hover {
+        transform: scale(1.03);
+      }
+
+      /* CHAT FAB */
+      .chat-fab {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, var(--accent-a), var(--accent-b));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--card-shadow);
+        z-index: 1500;
+        cursor: pointer;
+        transition: transform 0.28s;
+      }
+      .chat-fab:hover {
+        transform: scale(1.08);
+      }
+      .chat-fab i {
+        color: white;
+        font-size: 1.5rem;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        header.hero {
+          grid-template-columns: 1fr;
+        }
+        .profile-wrap {
+          margin: auto;
+          margin-top: 32px;
+        }
+        .tech-item {
+          width: 110px;
+          height: 86px;
+        }
+      }
+    </style>
+  </head>
+  <body class="light">
+    <!-- NAV -->
+    <div class="nav-pill">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#tech">Tech Stack</a>
+      <a href="#projects" style="display:none">Projects</a>
+      <a href="#analytics">Analytics</a>
+      <a href="#clients">Clients</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <button class="toggle" aria-label="Toggle theme">
+        <div class="dot"></div>
+      </button>
+    </div>
+
+    <!-- HERO -->
+    <header class="hero">
+      <div>
+        <span class="eyebrow"
+          >Visionary Tech Consultant • Creative Data Disruptor • Trusted
+          Enterprise Architect</span
+        >
+        <h1 class="title">Ravindra Kumar Challagandla</h1>
+        <p class="lead">
+          Helping Manufacturing, Oil & Gas, F&B clients leverage .NET, Power BI
+          & Enterprise Architecture for transformative outcomes.
+        </p>
+
+        <div class="roles">
+          <span class="role-chip">.NET Visionary</span>
+          <span class="role-chip">Power BI Expert</span>
+          <span class="role-chip">Enterprise Architect</span>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn-cta" href="#contact">Book Free Session</a>
+          <a class="btn-ghost" style="display:none" href="#contact">Lead Capture</a>
+        </div>
+      </div>
+
+      <div class="profile-wrap" aria-hidden="false">
+        <div class="profile-ring" aria-hidden="true"></div>
+        <div class="profile-card">
+          <!-- placeholder avatar (replace with your LinkedIn image later) -->
+           <!--src="https://avatar.iran.liara.run/public/18"-->
+          <img
+            
+            src="https://media.licdn.com/dms/image/v2/C4E03AQE6CHJTUlR6eg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516946548828?e=1762387200&v=beta&t=zUP_3QVrNcgDwdzRD8gU7Y4MRls3-9lcDuo4BgvnPt0"
+            alt="Ravindra Kumar Challagandla"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container text-center">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-sub">
+          I am a versatile software professional with 20+ years of experience. I
+          help businesses leverage technology for growth and innovation, while
+          mentoring professionals in Power BI and enterprise solutions.
+        </p>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">Services Offered</h2>
+        <p class="section-sub">
+          Helping clients achieve tech transformation through tailored
+          consulting and solutions.
+        </p>
+        <div class="service-grid">
+          <div class="service">
+            <i class="fas fa-cogs fa-lg"></i> .NET Solution Architecture
+          </div>
+          <div class="service">
+            <i class="fas fa-chart-line fa-lg"></i> Power BI Consulting &
+            Training
+          </div>
+          <div class="service">
+            <i class="fas fa-shield-alt fa-lg"></i> Enterprise Integration &
+            Security
+          </div>
+          <div class="service">
+            <i class="fas fa-lightbulb fa-lg"></i> Technology Strategy &
+            Advisory
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH -->
+    <section id="tech">
+      <div class="container text-center">
+        <h2 class="section-title">Tech Stack</h2>
+        <p class="section-sub">
+          My toolkit for delivering business transformation.
+        </p>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg"
+              alt=".NET"
+            /><span>.NET</span>
+          </div>
+          <div class="tech-item">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/4/41/Microsoft_SQL_Server_2025_icon.svg"
+              alt="SQL Server"
+            /><span>SQL Server</span>
+          </div>
+          <div class="tech-item">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+              alt="Power BI"
+            /><span>Power BI</span>
+          </div>
+          <div class="tech-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+              alt="JavaScript"
+            /><span>JavaScript</span>
+          </div>
+          <div class="tech-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+              alt="Azure"
+            /><span>Azure</span>
+          </div>
+          <div class="tech-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+              alt="HTML5"
+            /><span>HTML5</span>
+          </div>
+          <div class="tech-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+              alt="CSS3"
+            /><span>CSS3</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" style="display:none">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-sub">Some highlights of my recent work.</p>
+        <div class="project-grid">
+          <div class="project-card">
+            <img
+              src="https://loremflickr.com/800/400/technology?random=101"
+              alt="Enterprise BI Dashboard"
+            />
+            <h5>Enterprise BI Dashboard</h5>
+          </div>
+          <div class="project-card">
+            <img
+              src="https://loremflickr.com/800/400/software?random=102"
+              alt="Custom .NET Integration"
+            />
+            <h5>Custom .NET Integration</h5>
+          </div>
+          <div class="project-card">
+            <img
+              src="https://loremflickr.com/800/400/data?random=103"
+              alt="Data Automation & Insights"
+            />
+            <h5>Data Automation & Insights</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANALYTICS -->
+    <section id="analytics">
+      <div class="container text-center">
+        <h2 class="section-title">Achievements & Analytics</h2>
+        <div class="analytics-grid">
+          <div class="analytic-item">
+            <h3 class="number" data-target="20">0+</h3>
+            <p>Happy Customers</p>
+          </div>
+          <div class="analytic-item">
+            <h3 class="number" data-target="40">0+</h3>
+            <p>Projects Delivered</p>
+          </div>
+          <div class="analytic-item">
+            <h3 class="number" data-target="300">0+</h3>
+            <p>Hours of Consulting</p>
+          </div>
+          <div class="analytic-item">
+            <h3 class="number" data-target="100">0+</h3>
+            <p>Hours of Training</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTS -->
+    <section id="clients">
+      <div class="container">
+        <h2 class="section-title">Clients & Partners</h2>
+        <div class="client-marquee-wrapper" aria-hidden="false">
+          <div class="client-marquee" aria-hidden="true">
+            <!-- primary set -->
+            <img src="https://logo.clearbit.com/infosys.com" alt="Infosys" />
+            <img src="https://logo.clearbit.com/tcs.com" alt="TCS" />
+            <img
+              src="https://logo.clearbit.com/techmahindra.com"
+              alt="Tech Mahindra"
+            />
+            <img src="https://logo.clearbit.com/abb.com" alt="ABB" />
+            <img
+              src="https://logo.clearbit.com/schneider-electric.com"
+              alt="Schneider Electric"
+            />
+            <img src="https://logo.clearbit.com/aveva.com" alt="AVEVA" />
+            <img src="https://logo.clearbit.com/nttdata.com" alt="NTT Data" />
+            <img
+              src="https://logo.clearbit.com/cognizant.com"
+              alt="Cognizant"
+            />
+            <img
+              src="https://logo.clearbit.com/microsoft.com"
+              alt="Microsoft"
+            />
+            <img src="https://logo.clearbit.com/oracle.com" alt="Oracle" />
+            <img src="https://logo.clearbit.com/ibm.com" alt="IBM" />
+            <img src="https://logo.clearbit.com/siemens.com" alt="Siemens" />
+            <img src="https://logo.clearbit.com/pepsico.com" alt="PepsiCo" />
+            <img
+              src="https://logo.clearbit.com/coca-cola.com"
+              alt="Coca-Cola"
+            />
+            <img
+              src="https://logo.clearbit.com/exxonmobil.com"
+              alt="ExxonMobil"
+            />
+            <img src="https://logo.clearbit.com/chevron.com" alt="Chevron" />
+            <!-- duplicate set for seamless loop -->
+            <img src="https://logo.clearbit.com/infosys.com" alt="Infosys" />
+            <img src="https://logo.clearbit.com/tcs.com" alt="TCS" />
+            <img
+              src="https://logo.clearbit.com/techmahindra.com"
+              alt="Tech Mahindra"
+            />
+            <img src="https://logo.clearbit.com/abb.com" alt="ABB" />
+            <img
+              src="https://logo.clearbit.com/schneider-electric.com"
+              alt="Schneider Electric"
+            />
+            <img src="https://logo.clearbit.com/aveva.com" alt="AVEVA" />
+            <img src="https://logo.clearbit.com/nttdata.com" alt="NTT Data" />
+            <img
+              src="https://logo.clearbit.com/cognizant.com"
+              alt="Cognizant"
+            />
+            <img
+              src="https://logo.clearbit.com/microsoft.com"
+              alt="Microsoft"
+            />
+            <img src="https://logo.clearbit.com/oracle.com" alt="Oracle" />
+            <img src="https://logo.clearbit.com/ibm.com" alt="IBM" />
+            <img src="https://logo.clearbit.com/siemens.com" alt="Siemens" />
+            <img src="https://logo.clearbit.com/pepsico.com" alt="PepsiCo" />
+            <img
+              src="https://logo.clearbit.com/coca-cola.com"
+              alt="Coca-Cola"
+            />
+            <img
+              src="https://logo.clearbit.com/exxonmobil.com"
+              alt="ExxonMobil"
+            />
+            <img src="https://logo.clearbit.com/chevron.com" alt="Chevron" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--REVIEWS SECTION-->
+    <section id="reviews">
+      <div class="container text-center">
+        <h2 class="section-title">What Clients Say</h2>
+        <div class="reviews-slider">
+          <div class="reviews-track">
+            <!-- Review 1 -->
+            <div class="review-card">
+              <div class="review-header">
+                <img
+                  src="https://avatar.iran.liara.run/public/11"
+                  alt="Reviewer 1"
+                />
+                <div class="reviewer-info">
+                  <strong>Arjun Mehta</strong>
+                  <span class="role">Data Manager, FMCG Company</span>
+                </div>
+              </div>
+              <p>
+                "Working with Ravindra was transformative. His deep
+                understanding of Power BI and .NET made complex data models
+                simple. His attention to detail and structured approach helped
+                us streamline our data workflows and unlock powerful insights."
+              </p>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card">
+              <div class="review-header">
+                <img
+                  src="https://avatar.iran.liara.run/public/12"
+                  alt="Reviewer 2"
+                />
+                <div class="reviewer-info">
+                  <strong>Lisa Fernandez</strong>
+                  <span class="role"
+                    >Head of Digital Transformation, Manufacturing</span
+                  >
+                </div>
+              </div>
+              <p>
+                "Ravindra brought structure and scalability to our .NET
+                integrations. His architectural vision ensured smooth
+                deployment, secure data flow, and a future-ready setup for our
+                manufacturing analytics platform."
+              </p>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-card">
+              <div class="review-header">
+                <img
+                  src="https://avatar.iran.liara.run/public/13"
+                  alt="Reviewer 3"
+                />
+                <div class="reviewer-info">
+                  <strong>Nikhil Sharma</strong>
+                  <span class="role">BI Analyst, IT Services</span>
+                </div>
+              </div>
+              <p>
+                "As a Power BI mentor, Ravindra stands out. His training
+                sessions were hands-on, and he made complex DAX concepts easy to
+                understand. I now confidently build executive dashboards."
+              </p>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="review-card">
+              <div class="review-header">
+                <img
+                  src="https://avatar.iran.liara.run/public/14"
+                  alt="Reviewer 4"
+                />
+                <div class="reviewer-info">
+                  <strong>Susan Clark</strong>
+                  <span class="role">Program Director, Energy Sector</span>
+                </div>
+              </div>
+              <p>
+                "Ravindra’s consulting brought clarity to our legacy system
+                modernization. He guided our enterprise team with clear
+                strategy, technical depth, and measurable impact on project
+                delivery timelines."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-sub">
+          Reach out for freelance consulting, Power BI training, or insights.
+        </p>
+        <form
+          class="contact-form"
+          action="https://hooks.zapier.com/hooks/catch/XXXXX/XXXXX"
+          method="POST"
+        >
+          <input name="name" type="text" placeholder="Your Name" required />
+          <input name="email" type="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+          ></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- CHAT FAB -->
+    <div
+      class="chat-fab"
+      title="Chat on WhatsApp"
+      role="button"
+      onclick="window.open('https://wa.me/yourwhatsappnumber','_blank')"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      // Theme toggle
+      document
+        .querySelector(".toggle")
+        .addEventListener("click", () =>
+          document.body.classList.toggle("dark")
+        );
+      const reviewsTrack = document.querySelector(".reviews-track");
+      if (reviewsTrack) {
+        reviewsTrack.innerHTML += reviewsTrack.innerHTML;
+      }
+      /* ----------------------------
+     Rolling analytics counters (+)
+     Trigger once when #analytics is in view
+     ---------------------------- */
+      (function () {
+        const counters = Array.from(document.querySelectorAll(".number"));
+        const speed = 160; // larger -> slower
+        let started = false;
+        if (!counters.length) return;
+
+        const startCounters = () => {
+          if (started) return;
+          started = true;
+          counters.forEach((counter) => {
+            const target = +counter.getAttribute("data-target");
+            let current = 0;
+            const step = Math.max(1, Math.floor(target / speed));
+            const tick = () => {
+              current += step;
+              if (current < target) {
+                counter.innerText = current + "+";
+                requestAnimationFrame(() => setTimeout(tick, 18));
+              } else {
+                counter.innerText = target + "+";
+              }
+            };
+            tick();
+          });
+        };
+
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                startCounters();
+                obs.disconnect();
+              }
+            });
+          },
+          { threshold: 0.45 }
+        );
+        obs.observe(document.querySelector("#analytics"));
+      })();
+
+      /* ----------------------------
+     Pause marquee/reviews on hover
+     (handled by CSS : animation-play-state on hover)
+     ---------------------------- */
+
+      /* ----------------------------
+     Accessibility: allow pause/resume with keyboard for animations
+     ---------------------------- */
+      (function () {
+        const marquee = document.querySelector(".client-marquee");
+        const reviewsTrack = document.querySelector(".reviews-track");
+        document.addEventListener("keydown", (e) => {
+          if (e.code === "Space") {
+            [marquee, reviewsTrack].forEach((el) => {
+              if (!el) return;
+              const playing =
+                getComputedStyle(el).animationPlayState !== "paused";
+              el.style.animationPlayState = playing ? "paused" : "running";
+            });
+            e.preventDefault();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
