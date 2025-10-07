@@ -394,6 +394,9 @@
         border-radius: 14px;
         box-shadow: var(--card-shadow);
         transition: transform 0.28s;
+        display: flex;
+        align-items: center;
+        gap: 15px;
       }
       .service:hover {
         transform: translateY(-8px);
@@ -554,7 +557,7 @@
       }
 
       .review-card {
-        flex: 0 0 calc(25% - 20px); /* max 4 visible */
+        flex: 0 0 calc(20% - 20px); /* max 5 visible */
         margin: 10px;
         background: rgba(255, 255, 255, 0.3);
         backdrop-filter: blur(10px);
@@ -729,18 +732,18 @@
         >
         <h1 class="title">Ravindra Kumar Challagandla</h1>
         <p class="lead">
-          Helping Manufacturing, Oil & Gas, F&B clients leverage .NET, Power BI
-          & Enterprise Architecture for transformative outcomes.
+          Leveraging AI, .NET, and Power BI to drive transformative outcomes and intelligent solutions for Manufacturing, Oil & Gas, and F&B sectors. Specializing in Enterprise Architecture and AI-driven data insights.
         </p>
 
         <div class="roles">
           <span class="role-chip">.NET Visionary</span>
           <span class="role-chip">Power BI Expert</span>
           <span class="role-chip">Enterprise Architect</span>
+          <span class="role-chip">AI Agent Building</span>
         </div>
 
         <div class="cta-row">
-          <a class="btn-cta" href="#contact">Book Free Session</a>
+          <a class="btn-cta" href="https://calendly.com/your-username/free-consultation" target="_blank">Book Free Session</a>
           <a class="btn-ghost" style="display:none" href="#contact">Lead Capture</a>
         </div>
       </div>
@@ -764,9 +767,7 @@
       <div class="container text-center">
         <h2 class="section-title">About Me</h2>
         <p class="section-sub">
-          I am a versatile software professional with 20+ years of experience. I
-          help businesses leverage technology for growth and innovation, while
-          mentoring professionals in Power BI and enterprise solutions.
+          A seasoned software professional with over 20 years of experience, I now focus on the frontier of AI application. My expertise lies in architecting and building custom AI agents that drive intelligent automation and solve complex business problems. I also specialize in enterprise solutions using .NET and Power BI, and am committed to mentoring professionals in these cutting-edge fields.
         </p>
       </div>
     </section>
@@ -794,6 +795,9 @@
           <div class="service">
             <i class="fas fa-lightbulb fa-lg"></i> Technology Strategy &
             Advisory
+          </div>
+          <div class="service">
+            <i class="fas fa-robot fa-lg"></i> AI Agent Development
           </div>
         </div>
       </div>
@@ -1075,6 +1079,27 @@
                 delivery timelines."
               </p>
             </div>
+
+            <!-- Review 5 -->
+            <div class="review-card">
+              <div class="review-header">
+                <img
+                  src="https://avatar.iran.liara.run/public/15"
+                  alt="Reviewer 5"
+                />
+                <div class="reviewer-info">
+                  <strong>John Doe</strong>
+                  <span class="role">CTO, Tech Innovations Inc.</span>
+                </div>
+              </div>
+              <p>
+                "Ravindra's expertise in AI agent development is exceptional. 
+                He built a custom AI agent for our company that automated complex workflows 
+                and significantly improved our operational efficiency. His ability to 
+                understand our business needs and translate them into a powerful AI solution 
+                was impressive."
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -1109,7 +1134,7 @@
       class="chat-fab"
       title="Chat on WhatsApp"
       role="button"
-      onclick="window.open('https://wa.me/9885097640','_blank')">
+      onclick="window.open('https://wa.me','_blank')" style="display: none;">
       <i class="fab fa-whatsapp"></i>
     </div>
 
